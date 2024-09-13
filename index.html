@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Coin Flip</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <label for="side1">Side 1 (Heads)</label>
+            <input type="text" id="side1" placeholder="Heads" maxlength="10">
+        </div>
+        <div class="input-section">
+            <label for="side2">Side 2 (Tails)</label>
+            <input type="text" id="side2" placeholder="Tails" maxlength="10">
+        </div>
+
+        <div class="coin-container">
+            <div class="coin" id="coin">
+                <div class="side heads" id="coin-side1">Heads</div>
+                <div class="side tails" id="coin-side2">Tails</div>
+                <div class="side draw" id="coin-draw">Draw</div>
+            </div>
+        </div>
+
+        <button id="flip-button">Flip Coin</button>
+        <div class="result" id="result">Result: </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
