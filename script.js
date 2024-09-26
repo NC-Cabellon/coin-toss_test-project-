@@ -24,8 +24,9 @@ side2Input.addEventListener('input', () => {
 
 // Coin flip logic
 flipButton.addEventListener('click', () => {
-    // Reset the coin position
+    // Reset the coin position and force a reflow
     coin.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    void coin.offsetWidth; // Force a reflow
 
     // Hide result and notification before the flip
     resultDiv.classList.remove('show');
@@ -54,9 +55,11 @@ flipButton.addEventListener('click', () => {
     }
 
     // Apply the flipping transformation
-    coin.style.transform = `rotateX(${flipAngleX}deg) rotateY(${flipAngleY}deg)`;
+    requestAnimationFrame(() => {
+        coin.style.transform = `rotateX(${flipAngleX}deg) rotateY(${flipAngleY}deg)`;
+    });
 
-    // Show result and confetti after the flip animation finishes (4s for the animation)
+    // Show result and confetti after the flip animation finishes (5s for the animation)
     setTimeout(() => {
         let resultText = '';
         if (result === 'heads') {
